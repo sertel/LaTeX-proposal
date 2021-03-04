@@ -28,6 +28,18 @@
 {}
 \renewenvironment{prop@proposal}
 {\ifsubmit\setcounter{page}{1}\else\thispagestyle{empty}\fi
+{\ifsubmit 
+% TODO: Could not get the loop over the PIs to work properly.
+% \section*{Project Description -- Project Proposals}
+% % \textbf{\prop@tl\prop@gen@PIs{\pdataref@safe{PI}\tl@ext{name}}, \prop@tl\prop@gen@PIs{\pdataref@safe{PI}\tl@ext{city}}}\\
+% \begin{tabular}{c*{\the@PIs}{c}}
+%   \prop@tl\prop@gen@PIs{\pdataref@safe{PI}\tl@ext{name}}, 
+%   \prop@tl\prop@gen@PIs{\pdataref@safe{PI}\tl@ext{city}}\\
+% \end{tabular}\\
+% \noindent\textbf{\prop@gen@title}\\
+% \noindent\rule{\textwidth}{.5pt}
+% \subsection*{Project Description}
+\else 
 \begin{center}
 {\LARGE \prop@gen@instrument}\\[.2cm]
 {\LARGE\textbf{\prop@gen@title}}\\[.3cm]
@@ -39,6 +51,7 @@
 \prop@tl\prop@gen@PIs{\pdataref@safe{PI}\tl@ext{dept}}\\
 \end{tabular}\\[2cm]
 \end{center}
+\fi}
 \ifgeneral
 \ifsubmit\else
 \setcounter{section}{-1}
